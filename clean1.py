@@ -202,11 +202,12 @@ def main():
     df = df.drop(['liveinout', 'workdesc', 'jobsect_32_TEXT', 'Rescind2'], axis = 1)
 
     df['job_function'] = df[['job_function','jobdesc1_16_TEXT']].apply(update_job_function, axis=1)
+    df = df.drop(['jobdesc1_16_TEXT'], axis = 1)
+
 
     df['outcome'] = df[['outcome', 'edplans']].apply(update_outcome_with_edplans, axis = 1)
 
-    
-    df.to_excel("output1.xlsx")  
+    #df.to_excel("output1.xlsx")  
 
 
 if __name__ == "__main__":
