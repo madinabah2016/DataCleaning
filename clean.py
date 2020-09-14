@@ -255,7 +255,7 @@ def main():
     newColAk = colRename('job_title', colAK)
 
     colBL = df['fallschool']
-    newColBL = colRename('ont_ed_school', colBL)
+    newColBL = colRename('cont_ed_school', colBL)
 
     print(colOutcomeList)
 
