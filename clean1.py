@@ -205,8 +205,11 @@ def main():
     df = df.drop(['jobdesc1_16_TEXT'], axis = 1)
 
 
-    df['outcome'] = df[['outcome', 'edplans']].apply(update_outcome_with_edplans, axis = 1)
-
+    
+    df.loc[df['edplans'] == 2, 'outcome'] = ‘Still Looking (Continuing Education)’
+    
+    
+    #print(df['outcome'])
     #df.to_excel("output1.xlsx")  
 
 
